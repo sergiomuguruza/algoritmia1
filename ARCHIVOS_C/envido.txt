@@ -1,0 +1,65 @@
+algoritmo envido
+
+lexico  
+		Tcarta < valor E{1,...,12} , palo E{basto, oro, espada, copa} >
+		carta1, carta2, carta3 E Tcarta
+		puntosFinal E N{0,...,33}
+		
+		Funcion HayPuntos (dato carta1, carta2, carta3 E Tcarta)--> N{0, 1, 2}
+		Funcion SumaPuntos (dato c1, c2 E N{1,...,12})--> N{0,...,33}
+		Funcion ValorCarta (dato v1 E N{1,...,12})--> N{0,...,7}
+		Funcion PuntosEnvido (dato carta1, carta2, carta3 E Tcarta)--> N{0,...,33}
+		
+inicio 
+		entrada: carta1 carta2 carta3 // cada carta en formato (valor, palo)
+		
+		puntosFinal <-- PuntosEnvido(carta1, carta2, carta3)
+		
+		salida: puntosFinal
+		
+fin		
+
+
+
+
+
+FUNCIONES
+
+
+Funcion ValorCarta (dato v1 E N{1,...,12})--> N{0,...,7}
+ inicio 
+		si 1<=v1<=7 entonces
+			v1=v1
+		sino 
+			v1=0
+		fsi
+	<-- v1		
+fFuncion
+
+//esta funcion devuelve el valor numerico de la carta para el envido 
+// de 1 a 7 devuelve mismo valor , si es 10,11,12 devuelve 0
+
+
+
+
+Funcion SumaPuntos (dato c1, c2 E N{1,...,12})--> N{0,...,33}
+ inicio 
+		<--(ValorCarta(c1)+ValorCarta(c2)+20
+	
+fFuncion
+
+//esta funcion devuelve el valor numerico de la suma de los valores 
+//de dos cartas y le suma 20 para calcular los puntos del envido
+ 
+ 
+Funcion PuntosEnvido (dato carta1, carta2, carta3 E Tcarta) --> N{0,...,33}
+ inicio
+		si HayPuntos(carta1, carta2, carta3) = 0 entonces
+		<-- 0 
+		fsi
+		
+		si HayPuntos(carta1, carta2, carta3) = 2 entonces
+			segun carta1.palo = carta2.palo
+			<-- 
+fFuncion
+
