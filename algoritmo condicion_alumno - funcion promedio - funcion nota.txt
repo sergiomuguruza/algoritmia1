@@ -1,0 +1,39 @@
+algoritmo condicionAlumno
+
+lexico  n1, n2, n3 pertenece a R+
+		nf pertenece a R+
+		MSG pertenece a cadena
+		
+		funcion notafinal (dato n1 n2 n3 pertenece R+) --> R+
+		funcion promedio (dato n1 n2 n3 pertenece R+) --> R+
+		
+inicio 
+
+		entrada : n1 n2 n3
+		nf <-- notafinal(n1, n2, n3)
+		msg <-- "libre" cuando nf<5
+		msg <-- "regular" cuando nf>=5 y nf<7
+		msg <-- "promocionado" cuando nf>=7
+		
+		salida : msg
+		
+fin		
+
+
+funcion promedio (dato n1 n2 n3 pertenece R+) --> R+
+inicio
+
+<-- (n1+n2+n3)/3
+
+fin funcion
+
+
+
+funcion notafinal (dato n1 n2 n3 pertenece R+) --> R+
+inicio
+
+<-- 2 cuando n1<4 o n2<4 o n3<4
+<-- promedio(n1, n2, n3) cuando n1>=4 y n2>=4 y n3>=4
+
+fin funcion
+

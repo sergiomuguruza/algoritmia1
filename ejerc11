@@ -1,0 +1,41 @@
+
+// ejercicio 11
+
+// Alumno: Muguruza, Sergio Gustavo
+// Año: 2023 Comision: 1
+
+// ¿Que hace esta acción implementada en lenguaje C?
+ 
+void Swap (int *x,int *y) {
+*x = (*x)+(*y);
+*y = (*x)-(*y);
+*x = (*x)-(*y);
+}
+
+//Nota: que resultado mostraría cada uno de los printf de a, b, a, en el siguiente programa C:
+
+#include <stdio.h>
+int a,b;
+void Swap (int *x,int *y) {
+*x = (*x)+(*y);
+*y = (*x)-(*y);
+*x = (*x)-(*y);
+}
+int main() {
+printf("introduce el valor de la variable a ");
+scanf("%i",&a);
+printf("introduce el valor de la variable b ");
+scanf("%i",&b);
+Swap (&a, &b);
+printf ("el valor de a es %d ", a);
+printf ("el valor de b es %d ", b);
+printf("\n introduce el valor de la variable a ");
+scanf("%i",&a);
+printf("introduce el valor de la variable b ");
+scanf("%i",&b);
+Swap (&a, &a);
+printf ("el valor de a es %d ", a);
+return 0;
+}
+
+//¿Por qué el último prinf muestra ese valor de a?

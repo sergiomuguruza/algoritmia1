@@ -1,0 +1,36 @@
+algoritmo crearUsuario
+
+lexico
+msg pertenece cadena
+i pertenece N
+us pertenece cadena
+pass pertenece cadena
+
+funcion ContCorrecta (dato password pertenece cadena)--> logico
+
+(aca deberia ir el codigo de la funcion que recibe una cadena como parametro
+y verifica si la misma contiene al menos un numero y al menos una mayuscula. 
+luego devuelve valor logico verdadero si esto es correcto o falso si no)
+
+ffuncion
+
+inicio
+i<--0
+
+repetir
+entrada: us
+entrada: pass
+i<--i+1
+hasta que ContCorrecta(pass) o i>5
+
+si <= 5 entonces
+msg<-- " usuario y contraseña creados con exito"
+salida: msg
+
+sino
+msg<-- " sus 5 intentos han fallado - reinicie el programa"
+salida: msg
+
+fsi
+
+fin

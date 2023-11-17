@@ -1,0 +1,43 @@
+algoritmo puntorecta
+
+lexico 
+Tpunto =(x,y pertenece R)
+Trecta = (a, b pertenece R)
+
+P1 pertenece Tpunto
+rec pertenece Trecta
+
+msg cadena
+
+accion cargarPunto (resultado: p pertenece Tpunto)
+inicio 
+		entrada: p.x  p.y
+
+fin accion
+
+accion cargarRecta	(resultado: coef pertenece Trecta)
+inicio 
+		entrada: coef.a  coef.b
+
+fin accion
+
+funcion estaincluida (dato p pertenece Tpunto, recta pertenece Trecta)--> valor logico
+inicio 
+		<-- p.y = p.x = recta.a + recta.b
+		
+fin funcion
+
+inicio // algoritmo principal
+
+cargarPunto(p1)
+cargarRecta(rec)
+si estaincluida(p1,rec) entonces
+			msg <-- "el punto esta en la recta"
+sino 
+			msg <-- "el punto no esta en la recta"
+fin si
+
+salida : msg
+
+fin
+
