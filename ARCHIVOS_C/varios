@@ -1,0 +1,86 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct TNodo {
+    char info;
+    struct TNodo* next;
+} TNodo;
+
+TNodo* lista = NULL; // Inicialización de la lista como vacía
+
+// Acción CargarLista para cargar la lista enlazada
+void CargarLista(int cant) {
+    int i;
+    char value;
+    TNodo *cab = (TNodo *)malloc(sizeof(TNodo));
+    TNodo *aux, *u;
+
+    printf("Ingrese los caracteres:\n");
+
+    lista = cab; // Establecer la lista como el primer nodo
+
+    for (i = 0; i < cant; i++) {
+        aux = (TNodo *)malloc(sizeof(TNodo));
+
+        // Entrada de información para el nodo
+        scanf(" %c", &value);
+
+        aux->info = value;
+        aux->next = NULL;
+
+        u = lista; // Recorrer hasta el último nodo
+        while (u->next != NULL) {
+            u = u->next;
+        }
+
+        u->next = aux; // Agregar el nuevo nodo al final de la lista
+    }
+}
+
+// Acción Mostrar para mostrar los elementos de la lista
+void Mostrar() {
+    TNodo *aux = lista->next; // El primer nodo contiene basura, por lo que se omite
+
+    printf("Contenido de la lista:\n");
+    while (aux != NULL) {
+        printf("%c ", aux->info);
+        aux = aux->next;
+    }
+    printf("\n");
+}
+
+// Acción ContarA para contar la cantidad de 'a' en la lista
+void ContarA() {
+    TNodo *pri = lista->next;
+    TNodo *seg = lista;
+    int cont = 0;
+
+    if (pri == NULL) {
+        printf("La secuencia está vacía.\n");
+        return;
+    }
+
+    while (pri != NULL) {
+        seg = pri;
+        pri = pri->next;
+
+        if ((pri != NULL && pri->info == ' ' && seg->info == 'a') || (pri == NULL && seg->info == 'a')) {
+            cont++;
+        }
+    }
+
+    printf("Cantidad de 'a' en la secuencia: %d\n", cont);
+}
+
+int main() {
+    int cantidad;
+
+    printf("Ingrese la cantidad de caracteres: ");
+    scanf("%d", &cantidad);
+
+    CargarLista(cantidad);
+    Mostrar();
+    ContarA();
+
+    return 0;
+}
